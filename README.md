@@ -1,70 +1,135 @@
-# Getting Started with Create React App
+# OpenClaws React Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React landing page with Telegram integration, deployed to Vercel.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- ⚛️ **React 18** with functional components and hooks
+- 🎨 **Modern UI/UX** with responsive design
+- 🤖 **Telegram Bot Integration** for form submissions
+- 🚀 **Vercel Deployment** with serverless functions
+- 🔒 **Environment Variables** for secure API keys
+- 📱 **Mobile-first** responsive design
+- ⚡ **Fast loading** with optimized assets
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Deployed on Vercel: [https://test-repo-openclaws.vercel.app](https://test-repo-openclaws.vercel.app)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Local Development
 
-### `npm test`
+```bash
+# Clone the repository
+git clone https://github.com/b7sj3o/test_repo_openclaws_react.git
+cd test_repo_openclaws_react
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Install dependencies
+npm install
 
-### `npm run build`
+# Create environment file
+cp .env.example .env.local
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Edit .env.local with your Telegram credentials
+# REACT_APP_TELEGRAM_BOT_TOKEN=your_bot_token
+# REACT_APP_TELEGRAM_CHAT_ID=your_chat_id
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Start development server
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deployment to Vercel
 
-### `npm run eject`
+### 1. Push to GitHub
+```bash
+git add .
+git commit -m "Initial React app with Telegram integration"
+git push origin main
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Deploy to Vercel
+```bash
+# Install Vercel CLI
+npm install -g vercel
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Login to Vercel
+vercel login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Deploy from project directory
+cd /mnt/d/Desktop/test_repo_openclaws_react
+vercel
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Set Environment Variables in Vercel
+In your Vercel project dashboard, go to **Settings → Environment Variables** and add:
+- `TELEGRAM_BOT_TOKEN` = `8520714783:AAGE9s43Ad2AnT51XSz-w69I1B8K7Y7ubY4`
+- `TELEGRAM_CHAT_ID` = `928132950`
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+test_repo_openclaws_react/
+├── src/
+│   ├── components/          # React components
+│   │   ├── Header.js
+│   │   ├── Hero.js
+│   │   ├── Features.js
+│   │   ├── About.js
+│   │   ├── Contact.js
+│   │   └── Footer.js
+│   ├── App.js              # Main App component
+│   ├── App.css             # Global styles
+│   └── index.js            # Entry point
+├── api/                    # Vercel serverless functions
+│   └── send-to-telegram.js # Telegram API handler
+├── public/                 # Static assets
+├── .env.example           # Environment variables template
+├── vercel.json            # Vercel configuration
+└── package.json           # Dependencies
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Telegram Integration
 
-### Code Splitting
+The contact form sends data to your Telegram bot via:
+1. Frontend → Vercel serverless function (`/api/send-to-telegram`)
+2. Serverless function → Telegram Bot API
+3. Telegram Bot → Your Telegram account
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Testing the Integration
 
-### Analyzing the Bundle Size
+1. **Local testing**: Set up ngrok or test with mock data
+2. **Production**: Deploy to Vercel and test with real form submissions
+3. **Monitor logs**: Check Vercel function logs for debugging
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Customization
 
-### Making a Progressive Web App
+### Update Telegram Credentials
+Edit environment variables in Vercel dashboard.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Modify Styling
+Edit `src/App.css` and component inline styles.
 
-### Advanced Configuration
+### Add New Features
+Create new components in `src/components/` and import them in `App.js`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Troubleshooting
 
-### Deployment
+### Form not sending to Telegram
+1. Check Vercel environment variables are set correctly
+2. Verify Telegram bot token is valid and bot is running
+3. Check Vercel function logs for errors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Local development issues
+1. Make sure `.env.local` file exists with correct variables
+2. Restart development server after changing environment variables
+3. Check browser console for errors
 
-### `npm run build` fails to minify
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Created by **OpenClaw AI Assistant**
+- Icons from **React Icons**
+- Deployed on **Vercel**
+- Telegram integration via **Telegram Bot API**
+
+## License
+
+MIT License - feel free to use as a template for your own projects.
