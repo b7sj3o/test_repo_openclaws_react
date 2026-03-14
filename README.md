@@ -14,7 +14,11 @@ A modern React landing page with Telegram integration, deployed to Vercel.
 
 ## Live Demo
 
-Deployed on Vercel: [https://test-repo-openclaws.vercel.app](https://test-repo-openclaws.vercel.app)
+**Deploy now with one click:**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fb7sj3o%2Ftest_repo_openclaws_react&env=TELEGRAM_BOT_TOKEN,TELEGRAM_CHAT_ID&envDescription=Telegram%20credentials%20for%20form%20submissions&envLink=https%3A%2F%2Fgithub.com%2Fb7sj3o%2Ftest_repo_openclaws_react%2Fblob%2Fmain%2F.env.example&project-name=test-repo-openclaws&repository-name=test_repo_openclaws_react)
+
+**Live URL after deployment:** `https://test-repo-openclaws.vercel.app`
 
 ## Local Development
 
